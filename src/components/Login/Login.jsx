@@ -12,7 +12,7 @@ const LoginPage = ()=>{
     const LogInFunction = async ()=>{
         try {
             await signInWithEmailAndPassword(getAuth(),email , password)
-            navigate('/cart')
+            navigate('/')
         } catch (e) {
             setError(e.message)
         }

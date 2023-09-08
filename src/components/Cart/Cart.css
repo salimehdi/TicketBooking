@@ -1,23 +1,130 @@
+.out{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 70vh;
+    width: 100%;
+}
+.loading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    height: 100%;
+    width: 9rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #adaffa;
+    animation: fadeInOut 1s infinite;
+    position: relative;
+  }
+  
+  .loading::after {
+    content: "";
+    color: #adaffa;
+    animation: dots 1s infinite;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0.5;
+      color: #adaffa;
+    }
+    50% {
+      opacity: 1;
+      color: #9396fb;
+    }
+  }
+  
+  @keyframes dots {
+    0%, 25% {
+      content: ".";
+    }
+    50% {
+      content: "..";
+    }
+    75% {
+      content: "...";
+    }
+    100% {
+      content: "";
+    }
+  }
 .cartOuter{
     width: 80%;
-    height: 80vh;
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin-top: 10px;
     gap: 10px;
     >div>.cart{
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+        justify-content: center;
         align-items: center;
         margin: 20px;
         gap: 30px;
         height: 200px;
-        width: 80%;
-        >img{
-            height: 100%;
+        width: calc(100% - 40px);
+        >.name-ven{
+            height: 200px;
+            width: 400px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: left;
+            flex-direction: column;
+        }
+        >.imgOfEventInExplore{
+            height: inherit;
+            width: 200px !important;
+            max-width: 200px !important;
+            min-width: 200px !important;
+            background-position: center;
+            background-size: cover;
+            border-radius: 8px;
+          }
+          &>.details{
+            width: 200px !important;
+            max-width: 200px !important;
+            min-width: 200px !important;
         }
     }
 }
 .bottom{
+    width: 100%;
     color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    >.total{
+        margin: 20px;
+        font-size: 1.5rem;
+    }
+    >.buyBtn{
+        margin: 20px;
+        padding: 10px;
+        background-color: #3418c0;
+        border-radius: 10px;
+        color: aliceblue;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+.loginReq{
+  color: aliceblue;
+  margin: auto;
+  font-size: 2rem;
+}
+.exploreAndRemoveBtn{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: inherit;
+  >button{
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: lightblue;
+    color: rgb(0, 0, 69);
+  }
 }

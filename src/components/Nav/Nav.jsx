@@ -17,7 +17,7 @@ function Nav () {
             <li onClick={()=>{navigate(`/`)}} >Home</li>
             <li onClick={()=>navigate('/cart')} >Cart</li>
             {user
-                 ? <li className='logBtn' onClick={()=>{signOut(getAuth())}}>Logout</li>
+                 ? <li className='logBtn' onClick={()=>{signOut(getAuth())}}>Logout <span>{user.email}</span></li>
                  : <li className='logBtn' onClick={()=>navigate('/login')}>Login</li>
             }
         </ul>
@@ -35,7 +35,10 @@ function Nav () {
             <ul>
             <li>Home</li>
             <li>Cart</li>
-            <li>{loginStatus}</li>
+            {user
+                 ? <li className='logBtn' onClick={()=>{signOut(getAuth())}}>Logout <span>{user.email}</span></li>
+                 : <li className='logBtn' onClick={()=>navigate('/login')}>Login</li>
+            }
             </ul>
             </>   
             )

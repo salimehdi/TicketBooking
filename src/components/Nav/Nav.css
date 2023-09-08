@@ -1,6 +1,6 @@
 .nav-bar{
-    
-    margin-top: 2vh;
+    padding-top: 1.4vh;
+    padding-bottom: 0.6vh;
     height: 10vh;
     /* Overall Heigth is 12vh */
     width: 100%;
@@ -30,7 +30,7 @@
             list-style: none;
             height: 100px;
             background-color: rgb(230, 230, 230);
-            padding: 0px;
+            padding: 6px;
             border-radius: 5px;
             width: 100px;
             display: flex;
@@ -65,7 +65,8 @@
         justify-content: space-evenly;
         align-items: center;
         height: 100%;
-        width: 60%;
+        width: 30%;
+        margin-left: 30%;
         >li{
             list-style: none;
             font-size: 1.5rem;
@@ -88,12 +89,30 @@
         }
     } 
 }
+li:hover{
+    border: 2px solid #fff;
+}
+li{
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #ffffff00;
+}
 .logBtn{
     padding: 5px;
+    padding-top: 0 !important;
     color: #3418c0 !important;
     background-color: #fff;
     border-radius: 5px;
     &:hover{
         background-color: #62c9f8;
+    }
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    >span{
+        font-size: 0.8rem;
+        color: rgb(15, 0, 42);
     }
 }
