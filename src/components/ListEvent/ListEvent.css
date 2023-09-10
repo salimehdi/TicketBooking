@@ -6,21 +6,22 @@
     justify-content: left;
     align-items: end;
     position: relative;
+    
     >.blurEffect{
         position: absolute;
-        top: 0;
+        top: -2px;
         width: 100%;
         height: 5vh;
         background-image: linear-gradient(to bottom, rgb(3, 0, 27) , rgba(0, 0, 80, 0));
         backdrop-filter: blur(3px);
     }
     >.filter{
-        min-width: 200px;
-        padding:  30px 30px 0px 30px;
+        min-width: 250px;
+        padding:  30px 30px 30px 30px;
         border-radius: 30px 30px 0px 0px;
         background-color: rgba(17, 0, 255, 0.085);
         width: 18%;
-        height: 78vh;
+        height: 70vh;
         margin-left: 5%;
         display: flex;
         align-items: center;
@@ -40,10 +41,10 @@
             justify-content: center;
             align-items: center;
         }
-        >.category{
+        >.category,.catergoryHidden{
             padding: 10px;
             border-radius: 5px;
-            background-color: #5350fadd;
+            background-color: #26258bdd;
             height:auto;
             width: 70%;
             display: flex;
@@ -243,6 +244,7 @@
         width: 20px;
         height: 20px;
         border-radius: 20px;
+        font-size: 0.7rem;
     }
     .list-event{
         height: 88vh;
@@ -253,13 +255,15 @@
         justify-self: center;
         align-items: center;
         align-self: center;
+        >.blurEffect{
+            display: none;
+        }
         >.filter{
-            min-width: 200px;
-            padding:  30px 30px 0px 30px;
+            padding:30px 30px 30px 30px ;
             border-radius: 30px 30px 0px 0px;
             background-color: rgba(17, 0, 255, 0.085);
-            width: 100%;
-            height: 80vh;
+            width: 80%;
+            height: auto;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -271,7 +275,7 @@
                 color: #fff;
                 background-color: #211299;
                 padding: 5px;
-                border-radius: 5px;
+                border-radius: 15px;
                 cursor: pointer;
                 display: flex;
                 justify-content: center;
@@ -280,7 +284,7 @@
             >.category{
                 border-radius: 5px;
                 background-color: #5350fadd;
-                height:200px;
+                height:auto;
                 width: 70%;
                 display: flex;
                 justify-content: space-evenly;
@@ -288,7 +292,9 @@
                 padding-left: 10px;
                 flex-direction: column;
                 font-size: 1.3rem;
-                
+            }
+            .catergoryHidden{
+                display: none;
             }
         }
         

@@ -8,6 +8,7 @@ import { initializeApp } from "firebase/app";
 import CreateAccountPage from "./components/CreateAccount/CreateAccountPage";
 import LoginPage from "./components/Login/Login";
 import Cart from "./components/Cart/Cart";
+import Orders from "./components/Orders/Orders";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<ListEvent />} />
           <Route path="/explore/:name" element={<Explore />} />
           <Route path='/cart' element={<Cart/>} />
+          <Route path='/orders' element={<Orders/>} />
           <Route path='/login' element={<LoginPage/>} />
           <Route path='/create-account' element={<CreateAccountPage/>} />
           <Route path="*" element={<h1>404 Not Found</h1>} />

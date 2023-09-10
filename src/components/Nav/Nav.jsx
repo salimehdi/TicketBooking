@@ -16,6 +16,7 @@ function Nav () {
         <ul>
             <li onClick={()=>{navigate(`/`)}} >Home</li>
             <li onClick={()=>navigate('/cart')} >Cart</li>
+            <li onClick={()=>navigate('/orders')} >Orders</li>
             {user
                  ? <li className='logBtn' onClick={()=>{signOut(getAuth())}}>Logout <span>{user.email}</span></li>
                  : <li className='logBtn' onClick={()=>navigate('/login')}>Login</li>
@@ -33,8 +34,9 @@ function Nav () {
                }} 
              />
             <ul>
-            <li>Home</li>
-            <li>Cart</li>
+            <li onClick={()=>navigate('/')} >Home</li>
+            <li onClick={()=>navigate('/cart')} >Cart</li>
+            <li onClick={()=>navigate('/orders')} >Orders</li>
             {user
                  ? <li className='logBtn' onClick={()=>{signOut(getAuth())}}>Logout <span>{user.email}</span></li>
                  : <li className='logBtn' onClick={()=>navigate('/login')}>Login</li>

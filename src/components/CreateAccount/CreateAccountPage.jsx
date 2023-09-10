@@ -17,7 +17,7 @@ const CreateAccountPage = ()=>{
             }
             else {
             await createUserWithEmailAndPassword(getAuth(),email , password)
-            navigate('/Cart')
+            navigate('/')
             }
         } catch (e) {
             setError(e.message)

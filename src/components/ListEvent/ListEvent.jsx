@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./ListEvent.css";
 import axios from "axios";
 import useUser from "../../hooks/useUser";
+import { FaArrowDown , FaArrowUp } from "react-icons/fa";
 function ListEvent() {
   const { user } = useUser();
   const navigate = useNavigate();
@@ -12,12 +13,16 @@ function ListEvent() {
   const [filteredEventDetails, setFilteredEventDetails] = useState([]);
   const [selectedOption, setSelectedOption] = useState("all");
   const [namesOfAddedItems, setNamesOfAddedItems] = useState([]);
+  const [dropDown, setDropDown] = useState(false);
 
   const handleOptionChange = (event) => {
     setIsLoading(true);
     setSelectedOption(event.target.value);
     setIsLoading(false);
   };
+
+  
+  
 
   const eventDetailDownload = async () => {
     setIsLoading(true);
@@ -58,6 +63,7 @@ function ListEvent() {
     {
       !user && navigate("/cart");
     }
+    eventDetailDownload();
     setIsLoading(false);
   }
   function goToCart() {
@@ -71,11 +77,15 @@ function ListEvent() {
     <div className="list-event">
       <div className="blurEffect"></div>
       <div className="filter">
-        <h1>
-          Filter <span className="drop-down">v</span>{" "}
-        </h1>
-        <h2>Category:</h2>
-        <div className="category">
+        {
+          (dropDown) ? (<h1>
+            Filter <span className="drop-down"><FaArrowUp onClick={()=>setDropDown(!dropDown)} /></span>{" "}
+          </h1>) : (<h1>
+            Filter <span className="drop-down"><FaArrowDown onClick={()=>setDropDown(!dropDown)} /></span>{" "}
+          </h1>)
+        }
+        <h2 className={!dropDown && "catergoryHidden"} >Category:</h2>
+        <div className={dropDown ? "category" : "catergoryHidden"}>
           <>
             <label htmlFor="all">
               <input

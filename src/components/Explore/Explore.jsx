@@ -53,13 +53,15 @@ function Explore() {
           {/* Left.... */}
         <div className="imgOfEventInExplore" style={{ backgroundImage: `url(${eventDetails.image})` }}></div>
           <div className="this-event-details-text">
-            <h1>{eventDetails.name}</h1>
+          
+            <h1>{eventDetails.name}<div>Seats: {eventDetails.availableTickets}</div></h1>
             <h2>{eventDetails.category}</h2>
             <h3>{eventDetails.description}</h3>
             <h3>{datify(eventDetails.date)}</h3>
             <h3>{eventDetails.time}</h3>
             <h3>Venue: {eventDetails.venue}</h3>
             <h3 onClick={()=>{AddAndGoTOCart(eventDetails.name)}} >Add and go to cart: {eventDetails.ticketPrice}₹</h3>
+            
           </div>
         </div>
       </div>
